@@ -1,0 +1,8 @@
+# Keep the build context tiny and clean.
+__pycache__/
+*.py[cod]
+.git/
+.gitignore
+Dockerfile
+.dockerignore
+README.md
