@@ -1,7 +1,7 @@
 # Standalone image for the Ideal Gas Law simulation only.
 #
-# Build:
-#   docker build -f Dockerfile.idealGasLaw -t idealgaslaw .
+# Build (from inside this folder):
+#   docker build -t idealgaslaw .
 # Run:
 #   docker run --rm idealgaslaw
 
@@ -12,7 +12,6 @@ ENV PYTHONUNBUFFERED=1 \
 
 WORKDIR /sim
 
-# Copy ONLY this simulation so the image contains nothing else.
 COPY idealGasLaw.py /sim/
 
 CMD ["python", "idealGasLaw.py"]

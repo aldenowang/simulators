@@ -1,7 +1,7 @@
 # Standalone image for the 1D Heat Conduction simulation only.
 #
-# Build:
-#   docker build -f Dockerfile.1DHeatConduction -t 1dheatconduction .
+# Build (from inside this folder):
+#   docker build -t 1dheatconduction .
 # Run:
 #   docker run --rm 1dheatconduction
 
@@ -12,7 +12,6 @@ ENV PYTHONUNBUFFERED=1 \
 
 WORKDIR /sim
 
-# Copy ONLY this simulation so the image contains nothing else.
 COPY 1DHeatConduction.py /sim/
 
 CMD ["python", "1DHeatConduction.py"]

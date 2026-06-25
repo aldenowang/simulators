@@ -1,7 +1,7 @@
 # Standalone image for the Separable Differential Equations simulation only.
 #
-# Build:
-#   docker build -f Dockerfile.SeperableDiffEqs -t seperablediffeqs .
+# Build (from inside this folder):
+#   docker build -t seperablediffeqs .
 # Run:
 #   docker run --rm seperablediffeqs
 
@@ -12,7 +12,6 @@ ENV PYTHONUNBUFFERED=1 \
 
 WORKDIR /sim
 
-# Copy ONLY this simulation so the image contains nothing else.
 COPY SeperableDiffEqs.py /sim/
 
 CMD ["python", "SeperableDiffEqs.py"]
