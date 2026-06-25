@@ -1,0 +1,18 @@
+# Standalone image for the 1D Neutron Diffusion simulation only.
+#
+# Build:
+#   docker build -f Dockerfile.1DNeutronDiffusion -t 1dneutrondiffusion .
+# Run:
+#   docker run --rm 1dneutrondiffusion
+
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+WORKDIR /sim
+
+# Copy ONLY this simulation so the image contains nothing else.
+COPY 1DNeutronDiffusion.py /sim/
+
+CMD ["python", "1DNeutronDiffusion.py"]
